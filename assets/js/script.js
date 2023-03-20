@@ -1,6 +1,21 @@
 'use strict';
 
+// Evento de pedirle el nombre al usuario y renderizarlo en el nav
 
+window.addEventListener('load', () => {
+  
+  if(localStorage.getItem('nombreUsuario') === null) {
+    let nombre = prompt('¿Hey, what is your name?');
+    document.querySelector('.bienvenida').innerHTML = `Welcome ${nombre}`;
+
+    localStorage.setItem('nombreUsuario', nombre);
+
+  } else {
+    let nombre = localStorage.getItem('nombreUsuario');
+    document.querySelector('.bienvenida').innerHTML = `Welcome ${nombre}`;
+  }
+  console.log(localStorage);
+});
 
 
 /**

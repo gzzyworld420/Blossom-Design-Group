@@ -468,7 +468,7 @@ body.nav-active { overflow: hidden; }
 
 .hero-title {
   text-transform: uppercase;
-  word-break: break-all;
+  /* word-break: break-all; */
 }
 
 .hero-subtitle {

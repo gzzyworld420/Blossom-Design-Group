@@ -16,7 +16,7 @@
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="./assets/images/BDG.png" type="image/svg+xml">
 
   <!-- 
     - google font link
@@ -34,6 +34,7 @@
     - preload images
   -->
   <link rel="preload" as="image" href="./assets/images/Diseño sin título.png">
+  <!-- con este link se carga la imagen antes de que se cargue el html -->
 
 </head>
 
@@ -59,8 +60,11 @@
     <div class="container">
 
       <a href="#" class="logo">
-        <img src="./assets/images/logo.svg" width="170" height="40" alt="Logo Blossom Design Group">
+        <!-- <img src="./assets/images/" width="170" height="40" alt="Logo Blossom Design Group"> -->
       </a>
+
+      <div class="bienvenida">
+      </div>
 
       <button class="nav-toggle-btn" data-nav-toggler data-nav-toggle-btn aria-label="Toggle menu">
         <span class="line line-1"></span>
@@ -71,9 +75,9 @@
         <ul class="navbar-list">
           <li><a href="#hero" class="navbar-link">Home</a></li>
           <li><a href="#services" class="navbar-link">Services</a></li>
-          <li><a href="#skills" class="navbar-link">Skills</a></li>
+          <li><a href="#skills" class="navbar-link">about</a></li>
           <li><a href="#portfolio" class="navbar-link">Portfolio</a></li>
-          <li><a href="#games" class="navbar-link">Games</a></li>
+          <li><a href="#games" class="navbar-link">Apps</a></li>
         </ul>
       </nav>
 
@@ -430,16 +434,16 @@
             <li class="slider-item">
               <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
 
-                <img src="./assets/images/portfolio-1.jpg" width="600" height="600" loading="lazy" alt="portfolio"
+                <img src="./assets/images/Diseño sin título.jpg" width="600" height="600" loading="lazy" alt="portfolio"
                   class="img-cover">
 
                 <div class="card-content">
-                  <h3 class="h3 card-title">Lab. 001</h3>
+                  <h3 class="h3 card-title"> 001</h3>
 
-                  <p class="card-text">Website Design</p>
+                  <p class="card-text"> Responsive Design / Development</p>
                 </div>
 
-                <a href="#" class="layer-link"></a>
+                <a href="https://gzzyworld420.github.io/Juana-Hardoy/" target="_blank" class="layer-link"></a>
 
               </div>
             </li>
@@ -451,7 +455,7 @@
                   class="img-cover">
 
                 <div class="card-content">
-                  <h3 class="h3 card-title">Aer Agency</h3>
+                  <h3 class="h3 card-title">002</h3>
 
                   <p class="card-text">Website / Development</p>
                 </div>
@@ -560,7 +564,7 @@
 
           <p class="section-subtitle" id="blog-label">Recent Proyects</p>
 
-          <h2 class="h2 section-title">Latest Games</h2>
+          <h2 class="h2 section-title">Latest Apps</h2>
 
           <ul class="blog-list">
 
@@ -575,12 +579,12 @@
                 <div class="card-content">
 
                   <time class="time" datetime="2022-06-24">
-                    <span class="span text-lg">24</span>
-                    June 2022
+                    <span class="span text-lg">10</span>
+                    January 2023
                   </time>
 
                   <div>
-                    <h3 class="h3 card-title">Get Started With Tiktok Ads.</h3>
+                    <h3 class="h3 card-title">Tic Tac Toe</h3>
 
                     <p class="card-text">
                       Phasellus et lacus suscipit congue nis in the miss mine one miss the drana risus in tincidunt
@@ -610,12 +614,12 @@
                 <div class="card-content">
 
                   <time class="time" datetime="2022-06-27">
-                    <span class="span text-lg">27</span>
-                    June 2022
+                    <span class="span text-lg">10</span>
+                    December 2022
                   </time>
 
                   <div>
-                    <h3 class="h3 card-title">UX in Ecommerce – 5 things to avoid.</h3>
+                    <h3 class="h3 card-title">App Calulator</h3>
 
                     <p class="card-text">
                       Phasellus et lacus suscipit congue nis in the miss mine one miss the drana risus in tincidunt
@@ -624,6 +628,44 @@
 
                     <a href="#" class="btn has-before">
                       <span class="span">Read more</span>
+
+                      <ion-icon name="arrow-forward"></ion-icon>
+                    </a>
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 700; --height: 470;">
+                  <img src="./assets/images/blog-1.jpg" width="700" height="470" loading="lazy"
+                    alt="Get Started With Tiktok Ads." class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <time class="time" datetime="2022-06-24">
+                    <span class="span text-lg">01</span>
+                    March 2023
+                  </time>
+
+                  <div>
+                    <h3 class="h3 card-title">Snake Game</h3>
+
+                    <p class="card-text">
+
+                      We have developed the famous snake game with html, css and javascript. In this game, the player
+                      controls a snake that moves across a playing field. The object of the game is to make the snake
+                      collect food (usually represented by small colored squares) without colliding with the edges of
+                      the playing field or with its own tail.
+                    </p>
+
+                    <a href="#" class="btn has-before">
+                      <span class="span"> Go and Play!</span>
 
                       <ion-icon name="arrow-forward"></ion-icon>
                     </a>
