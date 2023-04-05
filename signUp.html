@@ -13,19 +13,18 @@
   <!-- ---------------- estilos compartidos de login y signup ---------------- -->
   
 
-  <!-- ---------------------- logica aplicada en login ----------------------- -->
-  <script src="./js/login.js"></script>
+
+  <!-- ---------------------- logica aplicada en register -------------------- -->
   <script src="./js/util.js"></script>
+  <script src="./js/signUp.js"></script>
 
 </head>
 
 <body>
-
   <header class="container">
     <nav>
-      <h1>To-Do App</h1>
-      <img src="" alt="logo DH"> 
-      <!-- Logo de blossom design group -->
+      <h1>To-Do App | <span>Frontend II</span></h1>
+      <img src="" alt="logo DH">
     </nav>
   </header>
 
@@ -33,22 +32,30 @@
     <form>
       <div class="form-header">
         <h2>To-Do App</h2>
-        <p class="rounded">Login</p>
+        <p class="rounded">Register</p>
       </div>
+
+      <label>Nombre</label>
+      <input id="inputNombre" type="text">
+
+      <label>Apellido</label>
+      <input id="inputApellido" type="text">
 
       <label>Email</label>
       <input id="inputEmail" type="text">
+
       <label>Contraseña</label>
       <input id="inputPassword" type="password">
 
-      <button type="submit">Ingresar</button>
+      <label>Repetir contraseña</label>
+      <input id="inputPasswordRepetida" type="password">
 
+      <button type="submit">Crear Cuenta</button>
     </form>
 
     <div class="ingresarA">
-      <a href="./signUp.html">¿No tienes una cuenta? Regístrate aquí</a>
+      <a href="index.html">¿Ya tienes una cuenta? Ingrese aquí</a>
     </div>
-
   </div>
 
 </body>

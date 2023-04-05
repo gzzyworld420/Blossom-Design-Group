@@ -20,7 +20,7 @@
    * colors
    */
 
-  --raisin-black: hsla(231, 10%, 14%, 1);
+  --raisin-black: #202127;
   --roman-silver: hsla(229, 10%, 57%, 1);
   --eerie-black: hsla(228, 9%, 10%, 1);
   --black: hsla(0, 0%, 0%, 1);
@@ -455,6 +455,11 @@ body.nav-active { overflow: hidden; }
 }
 
 .overlay.active { display: block; }
+
+.logo img{
+  width: 100px;
+  background-color: var(--raisin-black);
+}
 
 
 
