@@ -4,19 +4,40 @@ window.addEventListener('load', function () {
     const inputEmail = document.querySelector("#inputEmail")
     const inputPassword = document.querySelector("#inputPassword")
 
+
+    // ICONO DE OJO
+
+    // Obtener referencias a los elementos del DOM
+    const passwordInput = document.getElementById('inputPassword');
+    const togglePassword = document.getElementById('togglePassword');
+
+    // Agregar un event listener para el clic en el ícono de "ver contraseña"
+    togglePassword.addEventListener('click', () => {
+        const type = passwordInput.getAttribute('type');
+        if (type === 'password') {
+            passwordInput.setAttribute('type', 'text');
+            togglePassword.classList.remove('fa-eye');
+            togglePassword.classList.add('fa-eye-slash');
+        } else {
+            passwordInput.setAttribute('type', 'password');
+            togglePassword.classList.remove('fa-eye-slash');
+            togglePassword.classList.add('fa-eye');
+        }
+    });
+
     /* -------------------------------------------------------------------------- */
     /*            FUNCIÓN 1: Escuchamos el submit y preparael envío           */
     // /* -------------------------------------------------------------------------- */
-    form.addEventListener("submit", (ev) => { 
+    form.addEventListener("submit", (ev) => {
         ev.preventDefault()
         // console.log("Preparando datos");
         const datos = {
             email: inputEmail.value,
-            password: inputPassword.value 
+            password: inputPassword.value
         }
         // console.log(datos);
-        realizarLogin( datos )
-     }) 
+        realizarLogin(datos)
+    })
 
     /* -------------------------------------------------------------------------- */
     /*                     FUNCIÓN 2: Realizar el login [POST]                    */
@@ -39,14 +60,14 @@ window.addEventListener('load', function () {
                 // console.log(response);
                 return response.json() // yo acá parseo para trabajarlo como un objeto de JS
             })
-            .then( resJS => {
+            .then(resJS => {
                 // console.log(resJS);
                 // console.log(resJS.jwt);
                 if (resJS.jwt) { // si existe ese token
                     localStorage.setItem("jwt", resJS.jwt) // me lo guardo en el bolsillo del LocalStorage
-                    location.replace("mis-tareas.html")
+                    location.replace("homePage.html")
                 } // caso contrario... error: usuario no existe..
             })
-            .catch( err => console.log(err))        
+            .catch(err => console.log(err))
     }
 });

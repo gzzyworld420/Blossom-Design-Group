@@ -5,13 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ToDo App</title>
+  <title>Blossom Design Group</title>
   <link rel="icon" type="image/x-icon" href="./assets/DH_Logo_Black.png">
   <meta name="description" content="Digital House CTD | Proyecto integrador | FRONTEND II"/>
 
 
   <!-- ---------------- estilos compartidos de login y signup ---------------- -->
-  <link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="./css/loginSignupStyles.css">
+  <link rel="stylesheet" href="./css/style.css">
 
 
   <!-- ---------------------- logica aplicada en register -------------------- -->
@@ -21,42 +22,78 @@
 </head>
 
 <body>
-  <header class="container">
-    <nav>
-      <h1>Blossom Design Group </h1>
-      <img src="" alt="logo BDG">
-    </nav>
-  </header>
 
-  <div class="container">
-    <form>
+   <!-- 
+    - #PRELOADER
+  -->
+
+  <div class="preloader" data-preloader>
+    <div class="circle"></div>
+  </div>
+
+  <!-- Página de inicio de sesión -->
+<div class="login-page">
+  <video autoplay loop muted id="login-video">
+    <source src="./assets/images/pexels-olia-danilevich-4974708-1920x1080-25fps.mp4" type="video/mp4">
+    <!-- Agregar más formatos de video si es necesario -->
+  </video>
+  <!-- Contenido de la página de inicio de sesión aquí -->
+</div>
+
+  <!-- <header class="container">
+    <nav>
+      <h1>To-Do App | <span>Frontend II</span></h1>
+      <img src="./assets/DigitalHouse_Logo_White.png" alt="logo DH">
+    </nav>
+  </header> -->
+
+  <div class="containerRegister">
+    <form class="formRegister">
       <div class="form-header">
-        <h2>Welcome</h2>
-        <p class="rounded">Register</p>
+        <!-- <h2>To-Do App</h2> -->
+        <img src="./assets/images/Copia de BDG 2.png" alt="" class="logoBlanco">
+        <!-- <p class="rounded">Register</p> -->
       </div>
 
-      <label>Nombre</label>
+      <label>First Name</label>
       <input id="inputNombre" type="text">
 
-      <label>Apellido</label>
+      <label>Last Name</label>
       <input id="inputApellido" type="text">
 
       <label>Email</label>
       <input id="inputEmail" type="text">
 
-      <label>Contraseña</label>
+      <label>Password</label>
       <input id="inputPassword" type="password">
 
-      <label>Repetir contraseña</label>
-      <input id="inputPasswordRepetida" type="password">
+      <!-- <label>Repetir contraseña</label>
+      <input id="inputPasswordRepetida" type="password"> -->
 
-      <button type="submit">Crear Cuenta</button>
+      <button type="submit">Register</button>
+      <div class="ingresarA">
+        <a href="./index.html">¿Already have an account? Login here!"</a>
+      </div>
     </form>
 
-    <div class="ingresarA">
-      <a href="index.html">¿Ya tienes una cuenta? Ingrese aquí</a>
-    </div>
+    
   </div>
+
+  <!-- Vinculación de jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Script para mostrar y ocultar el spinner -->
+<script>
+$(document).on("click", "a", function() {
+  // Mostrar el spinner antes de la transición
+  $(".preloader").show();
+});
+
+$(window).on("load", function() {
+  // Ocultar el spinner después de que la página se haya cargado
+  $(".preloader").fadeOut(500);
+});
+</script>
 
 </body>
 

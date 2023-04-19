@@ -1,20 +1,20 @@
 'use strict';
 
 // Evento de pedirle el nombre al usuario y renderizarlo en el nav
-window.addEventListener('load', () => {
+// window.addEventListener('load', () => {
   
-  if(localStorage.getItem('nombreUsuario') === null) {
-    let nombre = prompt('¿Hey, what is your name?');
-    document.querySelector('.bienvenida').innerHTML = `Welcome ${nombre}`;
+//   if(localStorage.getItem('nombreUsuario') === null) {
+//     let nombre = prompt('¿Hey, what is your name?');
+//     document.querySelector('.bienvenida').innerHTML = `Welcome ${nombre}`;
 
-    localStorage.setItem('nombreUsuario', nombre);
+//     localStorage.setItem('nombreUsuario', nombre);
 
-  } else {
-    let nombre = localStorage.getItem('nombreUsuario');
-    document.querySelector('.bienvenida').innerHTML = `Welcome ${nombre}`;
-  }
-  console.log(localStorage);
-});
+//   } else {
+//     let nombre = localStorage.getItem('nombreUsuario');
+//     document.querySelector('.bienvenida').innerHTML = `Welcome ${nombre}`;
+//   }
+//   console.log(localStorage);
+// });
 
 // SEGURIDAD: Si no se encuentra en localStorage info del usuario
 // no lo deja acceder a la página, redirigiendo al login inmediatamente.
@@ -23,32 +23,47 @@ if (!localStorage.jwt) {
 }
 /* ------ comienzan las funcionalidades una vez que carga el documento ------ */
 window.addEventListener('load', function () {
-
   /* ---------------- variables globales y llamado a funciones ---------------- */
     const URL = "https://todo-api.ctd.academy/v1"
-    const uriUsuarios = URL + "/users/getMe"   
-    const uriTareas =  URL +  "/tasks"   
+    const uriUsuarios = URL + "/users/getMe"     
     const token = localStorage.jwt
 
     // creo los selectores 
     const btnCerrarSesion = document.querySelector("#closeApp")
-    const formCrearTarea = document.querySelector(".nueva-tarea")
-    const nuevaTarea = document.querySelector("#nuevaTarea")
+   
 
     obtenerNombreUsuario()
-    consultarTareas()
+    
   /* -------------------------------------------------------------------------- */
   /*                          FUNCIÓN 1 - Cerrar sesión                         */
   /* -------------------------------------------------------------------------- */
 
   btnCerrarSesion.addEventListener('click', function () {
-   const cerrarSesion = confirm("¿Está seguro de que desea cerrar sesión?")
-
-   if (cerrarSesion) {
-    localStorage.clear()
-    location.replace("./index.html")
-   }
-  });
+    // const cerrarSesion = confirm("¿Está seguro de que desea cerrar sesión?")
+    // if (cerrarSesion) {
+    //   localStorage.clear()
+    //   location.replace("./index.html")
+    // }
+   Swal.fire({
+    title: '¿Desea cerrar sesión?',
+    icon: 'info',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, quiero salir',
+    cancelButtonText: 'No, mejor vuelvo'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Cerraste sesión!',
+        'Te esperamos pronto.',
+        'success'
+      )
+      localStorage.clear()
+      location.replace("./index.html")
+    }
+  })
+});
 
   /* -------------------------------------------------------------------------- */
   /*                 FUNCIÓN 2 - Obtener nombre de usuario [GET]                */
@@ -69,7 +84,8 @@ window.addEventListener('load', function () {
         console.log("Consultando datos del usuario... ");
         console.log(data);
         const nombreUsuario = document.querySelector(".user-info p")
-         nombreUsuario.innerText =  data.firstName
+        nombreUsuario.innerHTML = `Welcome ${data.firstName}`
+
       })
       .catch( err => console.log(err) )    
   };
@@ -221,4 +237,6 @@ const initSlider = function (currentSlider) {
 }
 
 for (let i = 0, len = sliders.length; i < len; i++) { initSlider(sliders[i]); }
+
+
 

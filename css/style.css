@@ -27,6 +27,7 @@
   --white: hsla(0, 0%, 100%, 1);
   --white_a10: hsla(0, 0%, 100%, 0.1);
   --white_a5: hsla(0, 0%, 100%, 0.05);
+  --laranja: #ff7059ff;
 
   /**
    * typography
@@ -358,7 +359,27 @@ body.nav-active { overflow: hidden; }
 
 .preloader.loaded .circle { opacity: 0; }
 
+/* video de fondo */
 
+.login-page, .register-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* Estilos para el video de fondo */
+.login-page video, .register-page video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 
 
@@ -380,6 +401,40 @@ body.nav-active { overflow: hidden; }
 .header.active {
   background-color: var(--raisin-black);
   padding-block: 16px;
+}
+
+
+
+.nombre-usuario {
+  position: fixed;
+  /* top: 50%; */
+  /* right: 20px; */
+  transform: translateY(-50%);
+  padding: 15px;
+  /* background-color: #333; */
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.nombre-usuario:hover {
+  transform: translateY(-50%) scale(1.05);
+  opacity: 0.9;
+}
+
+.user-info button {
+  background-color: var(--laranja);
+  color: white;
+  padding: .5rem 1rem;
+  margin-left: 350px;
+  border-radius: .3rem;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 .header .container {
@@ -458,7 +513,7 @@ body.nav-active { overflow: hidden; }
 
 .logo img{
   width: 100px;
-  background-color: var(--raisin-black);
+  background-color: black;
 }
 
 

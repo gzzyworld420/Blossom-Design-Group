@@ -1,0 +1,255 @@
+@import url('./globalStyles.css');
+
+/* NAV */
+header {
+    background-color: var(--negro);
+    height: 5rem;
+    margin-bottom: 3rem;
+}
+
+nav {
+    padding: 1rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 span {
+    font-weight: 300;
+    font-size: 1rem;
+    color: var(--lila);
+}
+
+nav img {
+    display: block;
+    height: 80%;
+}
+
+.container {
+    padding: 0 5%;
+    padding-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.containerRegister{
+    display: flex; /* Establecer el contenedor como flexbox */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 100vh; /* Establecer altura del contenedor */
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #f8f8f8;
+    margin-right: 20px;
+}
+
+.logoBlanco {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* FORM LOGIN / REGISTER */
+
+form .logoBlanco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 400px; /* Ajusta el ancho del formulario a tu preferencia */
+  height: 500px; /* Ajusta el alto del formulario a tu preferencia */
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formRegister{
+   max-width: 400px; /* Ajusta el ancho del formulario a tu preferencia */
+    height: 600px; /* Ajusta el alto del formulario a tu preferencia */
+      margin: 0 auto;
+      padding: 2rem 3rem;
+      background-color: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.form-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-bottom: 1rem; */
+    position: relative;
+}
+
+.form-header h2 {
+    margin-bottom: .8rem;
+}
+
+.form-header p {
+    padding: .2rem 1rem;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #007bff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    margin-bottom: .3rem;
+}
+
+form input {
+    border-radius: 100vh;
+    margin-bottom: 1rem;
+    padding: .3rem 1rem;
+    border: 2px solid var(--app-grey);
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+form input:focus {
+    outline: none;
+    border: 2px solid var(--lila);
+}
+
+form button {
+    width: 100%;
+    background-color: #FFBD59; /* Color de fondo dorado */
+  color: #000; /* Color de texto negro */
+  border: none; /* Sin borde */
+  padding: 10px 15px;
+  font-size: 18px; /* Tamaño de fuente */
+  font-weight: bold; /* Peso de fuente en negrita */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  display: block; 
+  margin: 0 auto; /* Centrar horizontalmente el botón */
+  margin-bottom: 10px;
+}
+
+form button:hover {
+    background-color:  #FFD78D;
+}
+
+.password-container {
+    position: relative;
+    /* Hace que el contenedor sea de posición relativa */
+    display: flex;
+    /* Hace que el contenedor sea un flex container */
+}
+
+.password-input {
+    /* Estilos para el input de contraseña */
+    flex: 1;
+    /* Hace que el input ocupe todo el espacio disponible en el contenedor */
+}
+
+.password-icon {
+    /* Estilos para el ícono de ojo */
+    position: absolute;
+    /* Hace que el ícono sea de posición absoluta */
+    right: 15px;
+    /* Ajusta la posición del ícono a la derecha del contenedor */
+    top: 40%;
+    /* Ajusta la posición vertical del ícono al centro */
+    transform: translateY(-50%);
+    /* Ajusta la posición vertical del ícono al centro */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el ícono para indicar que es clickeable */
+    color: var(--negro);
+}
+
+/* Estilos adicionales para el formulario */
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"],
+.form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background-color: #f8f8f8;
+    outline: none;
+}
+
+/* BOTON REGISTER */
+
+.ingresarA {
+    padding: 1rem 1rem;
+    text-align: center;
+}
+
+/* Estilos para el enlace de registro */
+.ingresarA a {
+    display: inline; /* Mostrar como en línea */
+    font-size: 16px; /* Tamaño de fuente */
+    color: #FFBD59; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    transition: opacity 0.3s ease; /* Transición suave para efecto de hover */
+    cursor: pointer; 
+  }
+  
+  /* Estilos de hover para el enlace de registro */
+  .ingresarA:hover {
+    box-shadow: 0px 0px 5px rgba(255, 189, 89, 0.5); /* Sombra de fondo en hover */
+  padding: 5px 10px; /* Agregar espacio de relleno para hacerlo parecer un botón */
+  }
+  
+  /* Estilos de active para el enlace de registro */
+  .ingresarA:active {
+    opacity: 1; /* Cambio de opacidad al hacer clic */
+  }
+  
+  /* Estilos de foco para el enlace de registro */
+  .ingresarA:focus {
+    outline: none; /* Remover el contorno de foco predeterminado */
+  }
+  
+  /* Estilos de selección de texto para el enlace de registro */
+  .ingresarA::selection {
+    background-color: #FFBD59; /* Cambio de color de fondo de selección de texto */
+    color: #000; /* Cambio de color de texto de selección */
+  }
+
+
+
+
+.logoLogin {
+    width: 100px;
+}
+
+/* Estilos para ver la validación */
+form span {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.invalid {
+    border: solid 2px red;
+    box-shadow: 0 0 10px red;
+}
+
+.error {
+    color: red;
+    display: block;
+}
