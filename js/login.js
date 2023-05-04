@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
 
     // Obtener referencias a los elementos del DOM
     const passwordInput = document.getElementById('inputPassword');
-    const togglePassword = document.getElementById('togglePassword');
+const togglePassword = document.getElementById('togglePassword');
 
     // Agregar un event listener para el clic en el ícono de "ver contraseña"
     togglePassword.addEventListener('click', () => {
@@ -25,6 +25,15 @@ window.addEventListener('load', function () {
         }
     });
 
+    // Aquí en este punto yo me encargo de mandar a llamar las funciones de normalizar texto y validaciónes
+
+    inputEmail.addEventListener("blur", e => isEmpty(`⚠️ Se requiere que ingrese su ${inputEmail.name}`, e)) // blur es cuando el usuario hace click fuera del input y se va a otro lado de la página (pierde el foco)
+    inputPassword.addEventListener("blur", e => isEmpty(`⚠️ Se requiere que ingrese su ${inputPassword.name}`, e))
+
+    inputEmail.addEventListener("input", validarEmail) // input es cuando el usuario escribe algo en el input
+    inputPassword.addEventListener("input", validarContrasenia)
+    
+
     /* -------------------------------------------------------------------------- */
     /*            FUNCIÓN 1: Escuchamos el submit y preparael envío           */
     // /* -------------------------------------------------------------------------- */
@@ -32,8 +41,8 @@ window.addEventListener('load', function () {
         ev.preventDefault()
         // console.log("Preparando datos");
         const datos = {
-            email: inputEmail.value,
-            password: inputPassword.value
+            email: normalizarEmail(inputEmail.value),
+            password: normalizarTexto(inputPassword.value)
         }
         // console.log(datos);
         realizarLogin(datos)

@@ -68,7 +68,7 @@ form .logoBlanco {
 
 form {
     width: 400px; /* Ajusta el ancho del formulario a tu preferencia */
-  height: 500px; /* Ajusta el alto del formulario a tu preferencia */
+  height: 525px; /* Ajusta el alto del formulario a tu preferencia */
     margin: 0 auto;
     padding: 2rem 3rem;
     background-color: #ffffff;
@@ -155,6 +155,9 @@ form button:hover {
     /* Hace que el contenedor sea de posición relativa */
     display: flex;
     /* Hace que el contenedor sea un flex container */
+    flex-direction: column;
+  align-items: flex-start;
+  min-height: 50px;
 }
 
 .password-input {
@@ -169,14 +172,20 @@ form button:hover {
     /* Hace que el ícono sea de posición absoluta */
     right: 15px;
     /* Ajusta la posición del ícono a la derecha del contenedor */
-    top: 40%;
+    top: 22%;
+    bottom: 45%;
     /* Ajusta la posición vertical del ícono al centro */
-    transform: translateY(-50%);
+    transform: translateY(-30%);
     /* Ajusta la posición vertical del ícono al centro */
     cursor: pointer;
     /* Cambia el cursor al pasar sobre el ícono para indicar que es clickeable */
     color: var(--negro);
 }
+
+  #password-alert {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
 /* Estilos adicionales para el formulario */
 .form input[type="text"],

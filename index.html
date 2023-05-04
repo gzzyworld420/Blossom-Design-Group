@@ -6,29 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blossom Design Group</title>
-  <link rel="icon" type="image/x-icon" href="./assets/DH_Logo_Black.png">
-  <meta name="description" content="Digital House CTD | Proyecto integrador | FRONTEND II" />
+  <link rel="icon" type="image/x-icon" href="./assets/images/BDG.png">
+  <meta name="description" content="Ignacio Aracena - Blossom Design Group - Portfolio" />
 
 
   <!-- ---------------- estilos compartidos de login y signup ---------------- -->
   <link rel="stylesheet" href="./css/loginSignupStyles.css">
   <link rel="stylesheet" href="./css/style.css">
 
-  <!-- esto es para cargar el manifest json de mi pwa -->
-  <link rel="manifest" href="manifest.json" />
-
   <!-- FONT AWESOME -->
   <script src="https://kit.fontawesome.com/822ef6f73a.js" crossorigin="anonymous"></script>
-
-  <!-- Implemento librerias -->
-  <!-- libreria de alertas -->
-  <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-  <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-
-  <!-- Libreria de animaciones -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!-- ---------------------- logica aplicada en login ----------------------- -->
   <script src="./js/util.js"></script>
@@ -77,13 +64,19 @@
       <input id="inputEmail" type="text" name="correo electrónico">
       <span></span>
 
-      <label for="inputPassword">Contraseña</label>
-
+      <label for="inputPassword">Password</label>
       <div class="password-container">
-        <input id="inputPassword" type="password" name="contraseña" class="password-input">
-        <i class="fas fa-eye password-icon" id="togglePassword"></i>
+        <input id="inputPassword" type="password" name="contraseña" class="password-input" data-error="">
+        
+        <div id="password-alert" class="alert alert-danger" role="alert">
+          <span id="password-alert-message"></span>
+        </div>
+        <i class="fas fa-eye password-icon toggle-password password-icon" id="togglePassword"></i>
       </div>
-      <span></span>
+
+     
+
+
 
       <button type="submit">Login</button>
       <div class="ingresarA">
