@@ -938,6 +938,23 @@ body.nav-active {
 
 }
 
+@media only screen and (max-width: 844px) {
+  /* tus estilos para dispositivos con un ancho máximo de 767px (celulares) */
+
+  .navbar button {
+      background-color: var(--laranja);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.3rem;
+      font-size: 18px;
+      font-weight: 400;
+      bottom: 50px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 25px;
+  }
+}
 
 
 

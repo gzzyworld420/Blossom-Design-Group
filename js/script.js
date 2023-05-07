@@ -16,13 +16,20 @@
 //   console.log(localStorage);
 // });
 
+
+
 // SEGURIDAD: Si no se encuentra en localStorage info del usuario
 // no lo deja acceder a la página, redirigiendo al login inmediatamente.
 if (!localStorage.jwt) {
   location.replace("./index.html")
 }
+
+
 /* ------ comienzan las funcionalidades una vez que carga el documento ------ */
 window.addEventListener('load', function () {
+  AOS.init();
+
+
   /* ---------------- variables globales y llamado a funciones ---------------- */
     const URL = "https://todo-api.ctd.academy/v1"
     const uriUsuarios = URL + "/users/getMe"     
