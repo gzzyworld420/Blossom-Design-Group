@@ -92,17 +92,7 @@
     </div> -->
 
   </div>
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker
-          .register("/serviceWorker.js")
-          .then(res => console.log("service worker registered"))
-          .catch(err => console.log("service worker not registered", err))
-      })
-    }
-  </script>
-
+  
   <!-- Vinculación de jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -117,6 +107,8 @@
       // Ocultar el spinner después de que la página se haya cargado
       $(".preloader").fadeOut(500);
     });
+
+    
   </script>
 
 </body>
