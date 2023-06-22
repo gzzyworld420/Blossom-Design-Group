@@ -48,7 +48,7 @@ const togglePassword = document.getElementById('togglePassword');
         realizarLogin(datos)
     })
 
-    /* -------------------------------------------------------------------------- */
+     /* -------------------------------------------------------------------------- */
     /*                     FUNCIÓN 2: Realizar el login [POST]                    */
     /* -------------------------------------------------------------------------- */
     function realizarLogin(datos) {
@@ -69,14 +69,14 @@ const togglePassword = document.getElementById('togglePassword');
                 // console.log(response);
                 return response.json() // yo acá parseo para trabajarlo como un objeto de JS
             })
-            .then(resJS => {
+            .then( resJS => {
                 // console.log(resJS);
                 // console.log(resJS.jwt);
                 if (resJS.jwt) { // si existe ese token
                     localStorage.setItem("jwt", resJS.jwt) // me lo guardo en el bolsillo del LocalStorage
-                    location.replace("homePage.html")
+                    location.replace("mis-tareas.html")
                 } // caso contrario... error: usuario no existe..
             })
-            .catch(err => console.log(err))
+            .catch( err => console.log(err))        
     }
 });
